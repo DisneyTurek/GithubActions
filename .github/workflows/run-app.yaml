@@ -11,6 +11,8 @@ jobs:
         with:
           dotnet-version: '5.0.301'
       - uses: nuget/setup-nuget@v1
+      - name: Nuget Restore
+        run: nuget restore GithubActions.sln
       - name: Install dependencies
         run: dotnet restore GithubActions.sln
       - name: Build
